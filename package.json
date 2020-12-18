@@ -1,0 +1,26 @@
+{
+  "name": "FirstNodeServer",
+  "version": "1.0.0",
+  "description": "First node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlidaSchefers/FirstNodeServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlidaSchefers/FirstNodeServer/issues"
+  },
+  "homepage": "https://github.com/AlidaSchefers/FirstNodeServer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
