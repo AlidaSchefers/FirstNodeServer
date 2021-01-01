@@ -1,8 +1,7 @@
 //this route will handle our api calls
 //use a piece of express (branch off) but don't instantiate a new express //this is a ROUTER CLASS
-const router = require("express").Router() //create new instance of a router //still not TOTALLY confident in the logic behind this
+const router = require("express").Router() //create new instance of a router
 const axios = require('axios')
-// const {default: axios} = require('axios') //can use object deconstruction here. //btw w some packages you need to include .default when using methods (e.g. axios.default.get())
 
 const nasaEndPoint = 'https://api.nasa.gov/planetary/apod'
 const myKey = process.env.NASA_API_KEY  //need to do include "process" in order to access the environment variables in the .env file
@@ -24,8 +23,9 @@ router.post("/bydate", async (req, res) => { //here the /nasa in the path is def
         res.json(data) //when in JS, don't need to stringify JSON keys, but in a raw JSON, do need "" (cannot use '')
     } catch (error) {
         console.log(error); //only gonna show up in our server console log
-        res.status(500).json({message: error.message || "An Unknown Error Occured"}) //server error. 
+        res.status(500).json({message: error.message || "An Unknown Error Occured"})
     }
+    next()
 }) 
 //if don't want to use promises, you can use the words "async" and "await". (btw what are these called? keywords?)
 //if one line needs to be syncronous and the rest asyncronous, first use async at the beginning (like in the router.post paras above) and then use await on the syncronous line (here in line 22)
