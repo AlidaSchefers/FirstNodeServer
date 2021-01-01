@@ -18,10 +18,12 @@ if (process.env.NODE_ENV === 'development') {
 
 const firstmiddleware = require("./middleware/firstmiddleware")
 const nasaRouter = require("./route/nasa")
+const router2 = require("./route/route2")
 
 server.use("/test",firstmiddleware) //we need to specify the next middleware. 
     //we can specify a path or not. any method/any path. regardless of what request it is, "use" lets us use the middleware 
 server.use("/nasa", nasaRouter) //put the middlewares you did not make first/above the ones you made
+server.use("/route2", router2)
 
 server.get("/test", (request, response) => {
     response.send("Hello World")
